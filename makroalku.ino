@@ -15,6 +15,7 @@ int inMax = 9;
          
 void setup() {
 Serial.begin(9600);
+Keyboard.begin(KeyboardLayout_sv_SE);
 
 Serial.println("Alustetaan");
 
@@ -23,7 +24,6 @@ Serial.println("Alustetaan");
    pinMode(i, INPUT_PULLUP);
 }
 
-  Keyboard.begin(KeyboardLayout_sv_SE);
 
 Serial.println("Alustus ok.");
 }
@@ -32,10 +32,8 @@ void loop() {
       Serial.println("1");
       Keyboard.press(KEY_LEFT_CTRL);
       Keyboard.press('c');
-      Keyboard.releaseAll();
-     
-      //digitalWrite(xmitLed, HIGH);
-      delay(200);
+      Keyboard.releaseAll();  
+         delay(200);
       }
        
        if (digitalRead(But2) == LOW){
@@ -51,7 +49,6 @@ void loop() {
        }
     if (digitalRead(But3) == LOW){
         Serial.println("3");
-        //Keyboard.print("Even panty-san is a filthy furry :pillowyes:");
       Keyboard.press(KEY_LEFT_ALT);
       Keyboard.press(KEY_TAB);
       Keyboard.releaseAll();
@@ -93,6 +90,5 @@ void loop() {
        
     else {
     Keyboard.releaseAll();
-    // digitalWrite(xmitLed, LOW);
-    }
+        }
 }
